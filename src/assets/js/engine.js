@@ -9,6 +9,17 @@ function gameEngine() {
 
   this.initEngine = function () {
     console.log("[DEBUG] Initialize Engine");
+
+    this.viewport = $("#viewport").first();
+    this.canvas = document.getElementById("viewport").getContext("2d");
+
+    window.animFrame = window.requestAnimationFrame;
+
+    this.animation();
+  };
+
+  this.animation = function () {
+    console.log("[DEBUG] Animation");
   };
 
   this.validateCapabilities = function (good, bad) {
@@ -18,6 +29,10 @@ function gameEngine() {
 
     var c = document.createElement("canvas");
     if (!(c.getContext && c.getContext("2d"))) {
+      allGood = false;
+    }
+
+    if (!window.requestAnimationFrame) {
       allGood = false;
     }
 
