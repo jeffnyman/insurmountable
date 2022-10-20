@@ -1,4 +1,4 @@
-function gameEngine() {
+function Engine() {
   this.init = function () {
     console.log("[DEBUG] Engine Started");
 
@@ -70,7 +70,7 @@ function gameEngine() {
   };
 }
 
-engine = new gameEngine();
+engine = new Engine();
 
 $(document).ready(function () {
   engine.init();
