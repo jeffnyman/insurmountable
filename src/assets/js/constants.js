@@ -2,6 +2,26 @@ function rnd(rndLimit) {
   return Math.floor(Math.random() * rndLimit) + 1;
 }
 
+function hasLeftDoor(roomId) {
+  if (roomDoors[roomId].indexOf(1) !== -1) {
+    return 1;
+  } else if (roomDoors[roomId].indexOf(4) !== -1) {
+    return 4;
+  }
+
+  return false;
+}
+
+function hasRightDoor(roomId) {
+  if (roomDoors[roomId].indexOf(2) !== -1) {
+    return 2;
+  } else if (roomDoors[roomId].indexOf(3) !== -1) {
+    return 3;
+  }
+
+  return false;
+}
+
 var maps = [
   // 0
   {
@@ -17,4 +37,40 @@ var maps = [
       8: [0, 0, 0, 0, 0, 31],
     },
   },
+];
+
+var roomDoors = [
+  [0],
+  [3],
+  [2, 4],
+  [1, 3],
+  [1, 2],
+  [2, 4],
+  [1],
+  [2, 4],
+  [1, 2],
+  [2, 4],
+  [2],
+  [3],
+  [4],
+  [1, 3],
+  [3, 4],
+  [1, 2],
+  [3, 4],
+  [1, 3],
+  [2],
+  [4],
+  [1, 2],
+  [1],
+  [1, 3],
+  [1],
+  [3, 4],
+  [4],
+  [1],
+  [3],
+  [2],
+  [3, 4],
+  [2],
+  [4],
+  [3],
 ];
