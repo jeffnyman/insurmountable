@@ -13,13 +13,29 @@ function gameEngine() {
     this.viewport = $("#viewport").first();
     this.canvas = document.getElementById("viewport").getContext("2d");
 
+    this.scanInterval = false;
+    this.scanFrameCounter = 0;
+
     window.animFrame = window.requestAnimationFrame;
 
     this.animation();
+    this.startScan();
   };
 
   this.animation = function () {
     console.log("[DEBUG] Animation");
+  };
+
+  this.startScan = function () {
+    console.log("[DEBUG] Start Scan");
+
+    this.scanInterval = setInterval(function () {
+      engine.scanRoutine();
+    }, 27);
+  };
+
+  this.scanRoutine = function () {
+    this.scanFrameCounter++;
   };
 
   this.validateCapabilities = function (good, bad) {
