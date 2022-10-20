@@ -1,0 +1,9 @@
+{
+  "name": "@jeffnyman/insurmountable",
+  "version": "0.1.0",
+  "description": "An homage to the \"Impossible Mission\" game from Epyx.",
+  "main": "public/index.html",
+  "keywords": ["game", "retro-game", "platformer", "2d", "HTML5", "canvas"],
+  "author": "Jeff Nyman",
+  "license": "MIT"
+}
