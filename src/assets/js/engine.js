@@ -3,8 +3,17 @@ function gameEngine() {
     console.log("[DEBUG] Engine Started");
 
     engine.validateCapabilities(function () {
-      engine.initEngine();
+      engine.generateNewGame(function () {
+        engine.initEngine();
+      });
     });
+  };
+
+  this.generateNewGame = function (done) {
+    game = new Game();
+    game.generateNewGame();
+
+    done();
   };
 
   this.initEngine = function () {
