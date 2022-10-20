@@ -1,4 +1,7 @@
 function Game() {
+  this.mapId = maps.length - 1; // there are 8 different layouts (and passwords)
+  this.map = maps[this.mapId]; // elevator system and rooms
+
   this.generateNewGame = function () {
     this.generateRooms();
   };
